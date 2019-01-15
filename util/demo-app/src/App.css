@@ -1,0 +1,18 @@
+/*
+* @Author: 67564
+* @Date:   2019-01-14 17:08:13
+* @Last Modified by:   67564
+* @Last Modified time: 2019-01-14 20:59:03
+*/
+body{
+  position: relative;
+}
+.App{
+  position: absolute;
+  left: 200px;
+  top: 300px;
+  width: 100px;
+  height: 100px;
+  overflow: auto;
+
+}
