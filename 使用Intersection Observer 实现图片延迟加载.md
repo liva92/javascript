@@ -1,6 +1,6 @@
 ﻿# 使用Intersection Observer 实现图片延迟加载
 标签： javascript
-> 特别声明，本文z转载[@大漠][1]《使用Intersection Observer 实现图片延迟加载》一文。
+> 特别声明，本文转载[@大漠][1]《使用Intersection Observer 实现图片延迟加载》一文。
 
 如果你还没有机会看过，@Paul Lewis 发布了一个精彩的视频系列，演示了如何构建一个媒体播放器以及渐进式 Web 应用（Progressive Web App）的一些重要功能。在 YouTube 上的这一系列视频 包括了他在建立网站时的各个部分。观看开发者展示他们工作的视频绝对是我最喜欢的学习新事物的方式！
 
