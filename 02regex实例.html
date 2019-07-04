@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>regex demo</title>
+
+</head>
+<body>
+<p class="high">1111</p>
+<p class="high">2222</p>
+<p>3333</p>
+<script>
+  /*-----------------1、使用构造函数蛇生成正则表达式--------*/
+  //当正则表达式的主体是不确定的，此时可以使用构造函数来创建。
+  function getElementByClassName(className){
+    var elements = document.getElementsByTagName('*');
+    //正则实例内部的表达式不用双斜杠包围
+    var regex = new RegExp('(^|\\s)' + className + '(\\s|$)');
+    var result =[];
+    for (i = 0; i < elements.length; i++){
+      var element = elements[i];
+      if (regex.test(element.className)){
+        result.push(element);
+      }
+    }
+    return result;
+  }
+
+  var highs = getElementByClassName('high');
+  highs.forEach(function(item){
+    item.style.color = 'red';
+  });
+  /*-----------------1、压缩字符串--------*/
+  function compress(source){
+    var keys = {};
+    source.replace(/([^=&]+)=([^&]*)/g,function(match,key,value){
+      keys[key] = (keys[key]? keys[key] + ',' : '') + value ;
+    });
+  //执行后，keys={a:'1,3',b:'2,4'}
+    var result = [];
+    for(var key in keys){
+      result.push(key + '=' + keys[key]);
+    }
+  //result = ['a=1,3','b=2,4']
+
+    return result.join('&');
+  };
+  console.log( compress("a=1&b=2&a=3&b=4")) ;
+  //a=1,3&b=2,4
+
+</script>
+</body>
+</html>
+
